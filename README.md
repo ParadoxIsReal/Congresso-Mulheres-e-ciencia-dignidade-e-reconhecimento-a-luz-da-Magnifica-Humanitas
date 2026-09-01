@@ -1,2 +1,3 @@
-# Lab-Fullstack-Plataforma-de-Cursos
-Atividade avaliativa de Construção de software, com o objetivo de criar uma interface funcional de uma plataforma de cursos utilizando HTML, bootstrap 5 e JavaScript.
+# Congresso Mulheres e Ciência
+
+Site estático de apresentação do tema "Dignidade e reconhecimento" com uma reportagem e um quiz interativo sobre as contribuições e visibilidade das mulheres na ciência.

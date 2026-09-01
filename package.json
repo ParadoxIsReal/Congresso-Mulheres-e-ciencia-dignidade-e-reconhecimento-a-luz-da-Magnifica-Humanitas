@@ -1,11 +1,10 @@
 {
-  "name": "plataforma-de-cursos-puc",
+  "name": "puccongresso-teologia-humanas",
   "version": "1.0.0",
-  "description": "Plataforma de Cursos PUC.",
-  "main": "main.mjs",
-  "type": "module",
+  "description": "Reportagem e Quiz: Mulheres na Ciencia.",
+  "main": "index.html",
   "scripts": {
-    "start": "node main.mjs"
+    "start": "python3 -m http.server 8000"
   },
   "author": "Ronaldo Oliveira",
   "license": "ISC"

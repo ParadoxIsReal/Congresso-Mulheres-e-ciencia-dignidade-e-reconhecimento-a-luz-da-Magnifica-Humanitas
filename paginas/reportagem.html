@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reportagem — Congresso Mulheres e Ciência</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --bg-dark: #17171b;
+      --bg-surface: #1e1e25;
+      --bg-panel: #23232d;
+      --text-main: #f5f3ff;
+      --text-muted: #d0c9eb;
+      --border-soft: rgba(167, 139, 250, 0.45);
+      --purple-strong: #7c3aed;
+      --purple-soft: #a78bfa;
+      --purple-deep: #5b21b6;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .reportagem-shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, var(--purple-strong), var(--purple-deep));
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.18);
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .topbar small {
+      display: inline-block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .article-body {
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .article-body p {
+      margin-bottom: 1.4rem;
+      color: var(--text-main);
+    }
+
+    .article-body .lead {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin: 30px 0;
+    }
+
+    .article-image {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: #111117;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.14);
+    }
+
+    .image-caption {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(124, 58, 237, 0.2);
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .reportagem-shell {
+        padding-top: 24px;
+      }
+      .article-card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reportagem-shell">
+    <header class="topbar">
+      <small>Congresso Mulheres e Ciência</small>
+      <h1>Dignidade e reconhecimento</h1>
+    </header>
+
+    <article class="article-card">
+      <div class="article-body">
+        <p class="lead">
+          Cola aqui o primeiro bloco de texto da reportagem. basicamente espaço preparado para receber texto principal da materia em formato de leitura continua
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+        </p>
+
+        <div class="article-grid">
+          <div>
+            <img class="article-image" src="../images/exemplo-1.jpg" alt="Imagem da reportagem 1" />
+            <div class="image-caption">Legenda da imagem 1 — substituir pelo texto real da reportagem.</div>
+          </div>
+        </div>
+
+        <p>
+          Praesent vel viverra magna. Integer tincidunt, justo sit amet posuere pulvinar, orci eros varius nibh, nec vestibulum turpis justo at ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        </p>
+
+        <p>
+          Praesent vel viverra magna. Integer tincidunt, justo sit amet posuere pulvinar, orci eros varius nibh, nec vestibulum turpis justo at ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        </p>
+
+        <div class="article-grid">
+          <div>
+            <img class="article-image" src="../images/exemplo-2.jpg" alt="Imagem da reportagem 2" />
+            <div class="image-caption">Legenda da imagem 2 — substituir pelo texto real da reportagem.</div>
+          </div>
+        </div>
+
+        <p>
+          Finalização da reportagem aqui com o fechamento da materia, pa pow.
+        </p>
+      </div>
+    </article>
+
+    <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
+  </div>
+</body>
+</html>
+

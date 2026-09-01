@@ -3,190 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Plataforma de Cursos PUC</title>
+  <title>Congresso Teologia</title>
 
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   
     <style id="9u3tql">
-    .bg-purple {
-      background-color: #6f42c1; /* roxo do próprio Bootstrap */
-      color: white;
+    :root {
+      --bg-dark: #17171b;
+      --bg-surface: #1e1e25;
+      --bg-panel: #23232d;
+      --text-main: #f5f3ff;
+      --text-muted: #d0c9eb;
+      --border-soft: rgba(167, 139, 250, 0.45);
+      --purple-strong: #7c3aed;
+      --purple-soft: #a78bfa;
+      --purple-deep: #5b21b6;
     }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+    }
+
     .dashboard-card {
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.12);
     }
     .dashboard-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
+    }
+    .banner-header {
+      border-radius: 1rem 1rem 0 0;
+      padding: 1.25rem 1.5rem;
+      color: white;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .banner-body {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-radius: 0 0 1rem 1rem;
+      border-top: 1px solid var(--border-soft);
+    }
+    .badge-purple {
+      background: var(--purple-strong) !important;
+      color: white !important;
+    }
+    .badge-soft {
+      background: rgba(167, 139, 250, 0.18) !important;
+      color: var(--text-main) !important;
+      border: 1px solid var(--border-soft);
+    }
+    .lead, .text-muted {
+      color: var(--text-muted) !important;
+    }
+    .title-accent {
+      color: var(--purple-soft);
+    }
+    @media (max-width: 767.98px) {
+      .row.g-4.justify-content-center {
+        display: flex;
+        flex-direction: column;
+      }
     }
     </style>
   </head>
 
-<body class="bg-light">
-  <!-- Banner Principal -->
-  <header class="bg-purple text-white py-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-8">
-          <h1 class="display-4">Plataforma de Cursos PUC</h1>
-          <p class="lead">Gerencimento de plataforma de cursos</p>
-        </div>
-        <div class="col-md-4 text-end">
-          <nav>
-            <a href="paginas/core.html" onclick="navegar('core')" class="btn btn-outline-light me-2">Acadêmico</a>
-            <a href="paginas/conteudo.html" onclick="navegar('conteudo')" class="btn btn-outline-light me-2">Conteúdo</a>
-            <a href="paginas/interacao.html" onclick="navegar('interacao')" class="btn btn-outline-light me-2">Acompanhamento</a>
-            <a href="paginas/curadoria.html" onclick="navegar('curadoria')" class="btn btn-outline-light me-2">Curadoria</a>
-            <a href="paginas/negocio.html" onclick="navegar('negocio')" class="btn btn-outline-light">Negócio</a>
-          </nav>
-        </div>
-      </div>
+<body>
+  <main class="container py-5">
+    <div class="text-center mb-5">
+      <span class="badge badge-purple rounded-pill px-3 py-2 mb-3">Congresso Mulheres e Ciência</span>
+      <h1 class="display-5 fw-bold title-accent">Dignidade e reconhecimento</h1>
+      <p class="lead mx-auto" style="max-width: 700px;">
+        Uma leitura sobre a importância de reconhecer o papel das mulheres na ciência e um desafio para testar o que foi aprendido.
+      </p>
     </div>
-  </header>
 
-  <!-- Dashboard -->
-  <main class="container my-5">
-    <div class="row g-4">
-      <!-- Acadêmico -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card dashboard-card h-100" onclick="navegar('core')">
-          <div class="card-header bg-primary text-white">
-            <h5 class="card-title mb-0">Acadêmico</h5>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6">
+        <a href="paginas/reportagem.html" class="text-decoration-none d-block h-100">
+          <div class="card h-100 dashboard-card" style="border-radius: 1rem; min-height: 340px;">
+            <div class="banner-header" style="background: linear-gradient(135deg, #4d6bd8, #2d3e91);">
+              <span class="badge badge-soft mb-3">Reportagem</span>
+              <h2 class="fw-bold mb-0">Reportagem</h2>
+            </div>
+            <div class="card-body banner-body d-flex flex-column justify-content-between p-4 p-lg-5">
+              <p class="mb-3">
+                Conheça o tema central do projeto: a luta por dignidade, visibilidade e reconhecimento das mulheres na ciência.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li>• Contexto histórico e social</li>
+                <li>• Importância da representatividade</li>
+                <li>• Ações e desafios do congresso</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-text">Gerencie usuários, categorias e cursos.</p>
-            <ul class="list-unstyled">
-              <li><strong>Usuários:</strong> <span id="count-usuarios">0</span></li>
-              <li><strong>Categorias:</strong> <span id="count-categorias">0</span></li>
-              <li><strong>Cursos:</strong> <span id="count-cursos">0</span></li>
-            </ul>
-          </div>
-        </div>
+        </a>
       </div>
 
-      <!-- Conteúdo -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card dashboard-card h-100" onclick="navegar('conteudo')">
-          <div class="card-header bg-success text-white">
-            <h5 class="card-title mb-0">Conteúdo</h5>
+      <div class="col-12 col-md-6">
+        <a href="paginas/quiz.html" class="text-decoration-none d-block h-100">
+          <div class="card h-100 dashboard-card" style="border-radius: 1rem; min-height: 340px;">
+            <div class="banner-header" style="background: linear-gradient(135deg, #2f9e8b, #1e6a5f);">
+              <span class="badge badge-soft mb-3">Quiz</span>
+              <h2 class="fw-bold mb-0">Quiz</h2>
+            </div>
+            <div class="card-body banner-body d-flex flex-column justify-content-between p-4 p-lg-5">
+              <p class="mb-3">
+                Teste seus conhecimentos após a leitura da reportagem. As perguntas são baseadas no conteúdo apresentado ali.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li>• Requer leitura da reportagem</li>
+                <li>• Avalia compreensão do tema</li>
+                <li>• Explora as ideias principais do congresso</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-text">Organize módulos e aulas.</p>
-            <ul class="list-unstyled">
-              <li><strong>Módulos:</strong> <span id="count-modulos">0</span></li>
-              <li><strong>Aulas:</strong> <span id="count-aulas">0</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Acompanhamento -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card dashboard-card h-100" onclick="navegar('interacao')">
-          <div class="card-header bg-warning text-white">
-            <h5 class="card-title mb-0">Acompanhamento</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">Monitore matrículas, progresso e avaliações.</p>
-            <ul class="list-unstyled">
-              <li><strong>Matrículas:</strong> <span id="count-matriculas">0</span></li>
-              <li><strong>Progresso:</strong> <span id="count-progresso">0</span></li>
-              <li><strong>Avaliações:</strong> <span id="count-avaliacoes">0</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Curadoria -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card dashboard-card h-100" onclick="navegar('curadoria')">
-          <div class="card-header bg-info text-white">
-            <h5 class="card-title mb-0">Curadoria</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">Crie trilhas e emita certificados.</p>
-            <ul class="list-unstyled">
-              <li><strong>Trilhas:</strong> <span id="count-trilhas">0</span></li>
-              <li><strong>Certificados:</strong> <span id="count-certificados">0</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Negócio -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card dashboard-card h-100" onclick="navegar('negocio')">
-          <div class="card-header bg-danger text-white">
-            <h5 class="card-title mb-0">Negócio</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">Administre planos, assinaturas e pagamentos.</p>
-            <ul class="list-unstyled">
-              <li><strong>Planos:</strong> <span id="count-planos">0</span></li>
-              <li><strong>Assinaturas:</strong> <span id="count-assinaturas">0</span></li>
-              <li><strong>Pagamentos:</strong> <span id="count-pagamentos">0</span></li>
-            </ul>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </main>
-
-<script type="module" src="main.mjs"></script>
-<script type="module">
-  import { UsuarioServico } from './servico/UsuarioServico.mjs';
-  import { CategoriaServico } from './servico/CategoriaServico.mjs';
-  import { CursoServico } from './servico/CursoServico.mjs';
-  import { ModuloServico } from './servico/ModuloServico.mjs';
-  import { AulaServico } from './servico/AulaServico.mjs';
-  import { MatriculaServico } from './servico/MatriculaServico.mjs';
-  import { ProgressoServico } from './servico/ProgressoServico.mjs';
-  import { AvaliacaoServico } from './servico/AvaliacaoServico.mjs';
-  import { TrilhaServico } from './servico/TrilhaServico.mjs';
-  import { CertificadoServico } from './servico/CertificadoServico.mjs';
-  import { PlanoServico } from './servico/PlanoServico.mjs';
-  import { AssinaturaServico } from './servico/AssinaturaServico.mjs';
-  import { PagamentoServico } from './servico/PagamentoServico.mjs';
-
-  const usuarioServico = new UsuarioServico();
-  const categoriaServico = new CategoriaServico();
-  const cursoServico = new CursoServico();
-  const moduloServico = new ModuloServico();
-  const aulaServico = new AulaServico();
-  const matriculaServico = new MatriculaServico();
-  const progressoServico = new ProgressoServico();
-  const avaliacaoServico = new AvaliacaoServico();
-  const trilhaServico = new TrilhaServico();
-  const certificadoServico = new CertificadoServico();
-  const planoServico = new PlanoServico();
-  const assinaturaServico = new AssinaturaServico();
-  const pagamentoServico = new PagamentoServico();
-
-  function navegar(pagina) {
-    window.location.href = `paginas/${pagina}.html`;
-  }
-
-  window.navegar = navegar;
-
-  function atualizarDashboard() {
-    document.getElementById('count-usuarios').textContent = usuarioServico.listar().length;
-    document.getElementById('count-categorias').textContent = categoriaServico.listar().length;
-    document.getElementById('count-cursos').textContent = cursoServico.listar().length;
-    document.getElementById('count-modulos').textContent = moduloServico.listarModulos().length;
-    document.getElementById('count-aulas').textContent = aulaServico.listar().length;
-    document.getElementById('count-matriculas').textContent = matriculaServico.listar().length;
-    document.getElementById('count-progresso').textContent = progressoServico.listar().length;
-    document.getElementById('count-avaliacoes').textContent = avaliacaoServico.listar().length;
-    document.getElementById('count-trilhas').textContent = trilhaServico.listar().length;
-    document.getElementById('count-certificados').textContent = certificadoServico.listar().length;
-    document.getElementById('count-planos').textContent = planoServico.listar().length;
-    document.getElementById('count-assinaturas').textContent = assinaturaServico.listar().length;
-    document.getElementById('count-pagamentos').textContent = pagamentoServico.listar().length;
-  }
-
-  window.addEventListener('load', atualizarDashboard);
-</script>
-
 </body>
 </html>
