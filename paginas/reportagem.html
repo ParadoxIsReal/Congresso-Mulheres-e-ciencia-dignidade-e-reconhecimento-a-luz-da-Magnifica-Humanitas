@@ -121,6 +121,15 @@
       text-decoration: none;
     }
 
+    .audio-player {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .article-card + .article-card {
+      margin-top: 15px;
+    }
+
     @media (max-width: 768px) {
       .reportagem-shell {
         padding-top: 24px;
@@ -137,6 +146,12 @@
       <small>Congresso Mulheres e Ciência</small>
       <h1>Dignidade e reconhecimento</h1>
     </header>
+
+    <article class="article-card">
+          <audio controls preload="metadata" class="audio-player">
+            <source src="../audio/reportagem.mp3" type="audio/mpeg">
+          </audio>
+    </article>
 
     <article class="article-card">
       <div class="article-body">
