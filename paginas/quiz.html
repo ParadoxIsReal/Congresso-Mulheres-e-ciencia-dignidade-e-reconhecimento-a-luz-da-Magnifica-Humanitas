@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz — Congresso Mulheres e Ciência</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --bg-dark: #17171b;
+      --bg-surface: #1e1e25;
+      --bg-panel: #23232d;
+      --text-main: #f5f3ff;
+      --text-muted: #d0c9eb;
+      --border-soft: rgba(167, 139, 250, 0.45);
+      --purple-strong: #7c3aed;
+      --purple-soft: #a78bfa;
+      --purple-deep: #5b21b6;
+      --blue-strong: #4d6bd8;
+      --green-strong: #2f9e8b;
+      --danger-soft: #ef4444;
+      --success-soft: #22c55e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #120f1a 0%, #17171b 100%);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .quiz-shell {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .quiz-card {
+      width: min(760px, 100%);
+      background: rgba(35, 35, 45, 0.94);
+      border: 1px solid var(--border-soft);
+      border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(17, 17, 24, 0.7);
+      overflow: hidden;
+    }
+
+    .quiz-header {
+      background: linear-gradient(135deg, var(--purple-strong), var(--purple-deep));
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .quiz-header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+    }
+
+    .quiz-header span {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .quiz-body {
+      padding: 28px;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .lead-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 12px 14px;
+      background: rgba(167, 139, 250, 0.08);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      color: var(--text-main);
+    }
+
+    .score-badge, .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .score-badge {
+      background: rgba(124, 58, 237, 0.18);
+      border: 1px solid var(--border-soft);
+    }
+
+    .timer-badge {
+      background: rgba(77, 107, 216, 0.15);
+      border: 1px solid rgba(77, 107, 216, 0.4);
+      min-width: 92px;
+    }
+
+    .question-label {
+      color: #c9c2ef;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .answer-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .answer-option {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      text-align: left;
+      border-radius: 12px;
+      padding: 16px 18px;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .answer-option:hover {
+      transform: translateY(-1px);
+      border-color: rgba(167, 139, 250, 0.9);
+      background: rgba(167, 139, 250, 0.06);
+    }
+
+    .answer-option.correct {
+      background: rgba(34, 197, 94, 0.14);
+      border-color: rgba(34, 197, 94, 0.7);
+    }
+
+    .answer-option.wrong {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.75);
+    }
+
+    .answer-option:disabled {
+      opacity: 1;
+      cursor: not-allowed;
+    }
+
+    .feedback-box {
+      margin-top: 18px;
+      min-height: 28px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .result-score {
+      display: grid;
+      place-items: center;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(124,58,237,0.22), rgba(47,158,139,0.2));
+      border: 1px solid var(--border-soft);
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .result-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .result-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 1.08rem;
+    }
+
+    .result-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(124, 58, 237, 0.2);
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 12px 22px;
+      font-weight: 700;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(135deg, var(--purple-strong), var(--purple-deep));
+      color: white;
+    }
+
+    .btn-primary-custom:hover,
+    .btn-secondary-custom:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary-custom {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border-soft);
+    }
+
+    @media (max-width: 576px) {
+      .quiz-body {
+        padding: 20px 16px 24px;
+      }
+
+      .quiz-header {
+        padding: 20px 18px;
+      }
+
+      .status-row {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .result-actions {
+        flex-direction: column;
+      }
+
+      .result-actions button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="quiz-shell">
+    <section class="quiz-card" aria-live="polite">
+      <header class="quiz-header">
+        <span>Congresso Mulheres e Ciência</span>
+        <h1>Quiz de conhecimento</h1>
+      </header>
+
+      <div class="quiz-body">
+        <div id="telaInicial" class="screen active">
+          <p class="lead-text">
+            Veja a reportagem e teste o que você aprendeu sobre dignidade, visibilidade e reconhecimento das mulheres na ciência.
+          </p>
+          <p class="lead-text">
+            Responda as perguntas em até 60 segundos cada uma. Uma resposta errada encerra a sequência.
+          </p>
+          <div class="result-actions">
+            <button id="btnComecar" class="btn-primary-custom" type="button">Começar</button>
+            <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
+          </div>
+        </div>
+
+        <div id="telaQuiz" class="screen">
+          <div class="status-row">
+            <div id="pontuacao" class="score-badge">Pontuação: 0</div>
+            <div id="tempo" class="timer-badge">60s</div>
+          </div>
+
+          <div>
+            <span class="question-label" id="numeroPergunta">Pergunta 1</span>
+            <div id="pergunta" class="question-text">Carregando pergunta…</div>
+          </div>
+
+          <div id="alternativas" class="answer-list" aria-label="Alternativas"></div>
+          <div id="feedback" class="feedback-box" aria-live="polite"></div>
+        </div>
+
+        <div id="telaResultado" class="screen">
+          <div class="result-score" id="resultadoPercentual">0%</div>
+          <div class="result-title" id="resultadoTitulo">Resultado</div>
+          <div class="result-subtitle" id="resultadoDescricao">Você terminou o quiz.</div>
+          <div class="result-subtitle" id="resultadoResumo">0/0 acertos</div>
+          <div class="result-actions">
+            <button id="btnReiniciar" class="btn-primary-custom" type="button">Reiniciar quiz</button>
+            <button id="btnVoltarInicio" class="btn-secondary-custom" type="button">Voltar para a tela inicial</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { QuizServico, QUIZ_PADRAO } from '../servico/Quiz.mjs';
+
+    const quizServico = new QuizServico(QUIZ_PADRAO);
+
+    const estado = {
+      perguntas: [],
+      indiceAtual: 0,
+      pontuacao: 0,
+      tempoRestante: 60,
+      timerId: null,
+      emJogo: false
+    };
+
+    const telaInicial = document.getElementById('telaInicial');
+    const telaQuiz = document.getElementById('telaQuiz');
+    const telaResultado = document.getElementById('telaResultado');
+    const pontuacaoEl = document.getElementById('pontuacao');
+    const tempoEl = document.getElementById('tempo');
+    const numeroPerguntaEl = document.getElementById('numeroPergunta');
+    const perguntaEl = document.getElementById('pergunta');
+    const alternativasEl = document.getElementById('alternativas');
+    const feedbackEl = document.getElementById('feedback');
+    const resultadoPercentualEl = document.getElementById('resultadoPercentual');
+    const resultadoTituloEl = document.getElementById('resultadoTitulo');
+    const resultadoDescricaoEl = document.getElementById('resultadoDescricao');
+    const resultadoResumoEl = document.getElementById('resultadoResumo');
+
+    function mostrarTela(nome) {
+      telaInicial.classList.toggle('active', nome === 'inicial');
+      telaQuiz.classList.toggle('active', nome === 'quiz');
+      telaResultado.classList.toggle('active', nome === 'resultado');
+    }
+
+    function atualizarPontuacao() {
+      pontuacaoEl.textContent = `Pontuação: ${estado.pontuacao}`;
+    }
+
+    function atualizarTempo() {
+      tempoEl.textContent = `${estado.tempoRestante}s`;
+    }
+
+    function limparTimer() {
+      if (estado.timerId) {
+        clearInterval(estado.timerId);
+        estado.timerId = null;
+      }
+    }
+
+    function obterTextoResultado(percentual) {
+      if (percentual >= 100) return 'PArabéns, mas não tem brinde.';
+      if (percentual >= 99) return 'QUASE, mas muito quase mesmo.';
+      if (percentual >= 75) return 'BOA! continue assim.';
+      if (percentual >= 50) return 'Ta começando a entender aspira.';
+      if (percentual >= 25) return 'Ruim, mas tem potencial.';
+      if (percentual >= 10) return 'Peba, nem leu a reportagem.';
+      return 'Ainda há muito por explorar. Volte à reportagem e tente novamente.';
+    }
+
+    function finalizarQuiz() {
+      limparTimer();
+      estado.emJogo = false;
+
+      const total = estado.perguntas.length || 0;
+      const percentual = total === 0 ? 0 : Math.round((estado.pontuacao / total) * 100);
+
+      resultadoPercentualEl.textContent = `${percentual}%`;
+      resultadoTituloEl.textContent = `${estado.pontuacao} de ${total} acertos`;
+      resultadoDescricaoEl.textContent = obterTextoResultado(percentual);
+      resultadoResumoEl.textContent = `Total de respostas corretas: ${estado.pontuacao} / ${total}`;
+
+      mostrarTela('resultado');
+    }
+
+    function iniciarTimer() {
+      limparTimer();
+      estado.tempoRestante = 60;
+      atualizarTempo();
+
+      estado.timerId = setInterval(() => {
+        estado.tempoRestante -= 1;
+        atualizarTempo();
+
+        if (estado.tempoRestante <= 0) {
+          limparTimer();
+          const perguntaAtual = estado.perguntas[estado.indiceAtual];
+          responderPergunta('', perguntaAtual, true);
+        }
+      }, 1000);
+    }
+
+    function avaliaResposta(opcao, pergunta, tempoEsgotado = false) {
+      limparTimer();
+      const botoes = alternativasEl.querySelectorAll('button');
+      const respostaCorreta = pergunta.correta;
+      botoes.forEach((botao) => {
+        const valor = botao.dataset.valor;
+        botao.disabled = true;
+
+        if (valor === respostaCorreta) {
+          botao.classList.add('correct');
+        }
+
+        if (valor === opcao && opcao !== respostaCorreta) {
+          botao.classList.add('wrong');
+        }
+      });
+
+      const acertou = opcao === respostaCorreta;
+
+      if (acertou) {
+        estado.pontuacao += 1;
+        atualizarPontuacao();
+        feedbackEl.textContent = 'Resposta correta! Preparando a próxima pergunta…';
+        feedbackEl.style.color = '#9ae6b4';
+      } else {
+        feedbackEl.textContent = tempoEsgotado
+          ? `Tempo esgotado! A resposta correta era: ${respostaCorreta}.`
+          : `Resposta incorreta. A resposta certa era: ${respostaCorreta}.`;
+        feedbackEl.style.color = '#fca5a5';
+      }
+
+      setTimeout(() => {
+        if (acertou) {
+          estado.indiceAtual += 1;
+          if (estado.indiceAtual >= estado.perguntas.length) {
+            finalizarQuiz();
+            return;
+          }
+          renderPergunta();
+          return;
+        }
+
+        finalizarQuiz();
+      }, 1200);
+    }
+
+    function responderPergunta(opcao, pergunta, tempoEsgotado = false) {
+      avaliaResposta(opcao, pergunta, tempoEsgotado);
+    }
+
+    function renderPergunta() {
+      const perguntaAtual = estado.perguntas[estado.indiceAtual];
+      if (!perguntaAtual) {
+        finalizarQuiz();
+        return;
+      }
+
+      numeroPerguntaEl.textContent = `Pergunta ${estado.indiceAtual + 1}`;
+      perguntaEl.textContent = perguntaAtual.pergunta;
+      feedbackEl.textContent = '';
+      feedbackEl.style.color = 'var(--text-main)';
+
+      const alternativasEmbaralhadas = quizServico.embaralharAlternativas(perguntaAtual);
+      alternativasEl.innerHTML = '';
+
+      alternativasEmbaralhadas.forEach((alternativa) => {
+        const botao = document.createElement('button');
+        botao.type = 'button';
+        botao.className = 'answer-option';
+        botao.textContent = alternativa;
+        botao.dataset.valor = alternativa;
+        botao.addEventListener('click', () => responderPergunta(alternativa, perguntaAtual));
+        alternativasEl.appendChild(botao);
+      });
+
+      iniciarTimer();
+    }
+
+    function iniciarQuiz() {
+      estado.perguntas = quizServico.montarSequencia();
+      estado.indiceAtual = 0;
+      estado.pontuacao = 0;
+      estado.emJogo = true;
+      atualizarPontuacao();
+      mostrarTela('quiz');
+      renderPergunta();
+    }
+
+    document.getElementById('btnComecar').addEventListener('click', iniciarQuiz);
+    document.getElementById('btnReiniciar').addEventListener('click', iniciarQuiz);
+    document.getElementById('btnVoltarInicio').addEventListener('click', () => {
+      limparTimer();
+      mostrarTela('inicial');
+    });
+
+    mostrarTela('inicial');
+  </script>
+</body>
+</html>
+  </script>
+</body>
+</html>

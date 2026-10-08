@@ -1,0 +1,11 @@
+{
+  "name": "puccongresso-teologia-humanas",
+  "version": "1.0.0",
+  "description": "Reportagem e Quiz: Mulheres na Ciencia.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  },
+  "author": "Ronaldo Oliveira",
+  "license": "ISC"
+}

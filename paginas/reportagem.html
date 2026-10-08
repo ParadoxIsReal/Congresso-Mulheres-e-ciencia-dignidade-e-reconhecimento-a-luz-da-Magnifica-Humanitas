@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reportagem — Congresso Mulheres e Ciência</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --bg-dark: #f8f9fa;       /* Fundo geral da página (branco/gelo jornalístico) */
+      --bg-surface: #ffffff;    /* Superfícies */
+      --bg-panel: #ffffff;      /* Fundo dos cartões de conteúdo */
+      --text-main: #111111;     /* Texto principal em tom escuro (quase preto) */
+      --text-muted: #555555;    /* Texto secundário / legendas */
+      --border-soft: #dcd6f7;   /* Bordas suaves */
+      --purple-strong: #7c3aed; /* Mantém o toque de cor no topo */
+      --purple-soft: #a78bfa;
+      --purple-deep: #5b21b6;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .reportagem-shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, var(--purple-strong), var(--purple-deep));
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.18);
+      color: #ffffff; /* Garante texto branco no cabeçalho roxo */
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #ffffff;
+    }
+
+    .topbar small {
+      display: inline-block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-card {
+      background: var(--bg-panel);
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra mais subtil para fundo branco */
+    }
+
+    .article-body {
+      color: var(--text-main);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    .article-body .lead {
+      color: #374151;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin: 30px 0;
+    }
+
+    .article-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #f3f4f6;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .image-caption {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      color: #374151;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: #e5e7eb;
+      color: #111111;
+      text-decoration: none;
+    }
+
+    .audio-player {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .article-card + .article-card {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .reportagem-shell {
+        padding-top: 24px;
+      }
+      .article-card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reportagem-shell">
+    <header class="topbar">
+      <small>Congresso Mulheres e Ciência</small>
+      <h1>Dignidade e reconhecimento</h1>
+    </header>
+
+        <div class="article-grid">
+          <div>
+            <video controls preload="metadata" class="article-image">
+              <source src="../video/reportagem.mp4" type="video/mp4">
+              O teu browser não suporta o elemento de vídeo.
+            </video>
+            <div class="image-caption">Legenda do vídeo — substituir pelo texto real da reportagem.</div>
+          </div>
+        </div>
+        
+           <article class="article-card">
+          <audio controls preload="metadata" class="audio-player">
+            <source src="../audio/reportagem.mp3" type="audio/mpeg">
+          </audio>
+          </article>
+
+    <article class="article-card">
+      <div class="article-body">
+        <p class="lead">
+          atores vemos, costumes não sabemos.
+        </p>
+
+        <p>
+          Você passa a vida inteira tentando se conhecer. O problema é que o instrumento que você usa pra isso é o mesmo que fabrica as mentiras sobre você.
+        </p>
+
+        <p>
+          Casamento é prolongar uma ilusão pela vida toda
+
+        <div class="article-grid">
+          <div>
+            <img class="article-image" src="../images/unnamed.jpg" alt="Imagem da reportagem 1" />
+            <div class="image-caption">Legenda da imagem 1 — substituir pelo texto real da reportagem.</div>
+          </div>
+        </div>
+
+        <p>
+         A importância de ler não reside em encontrar a luz, mas em aprender a nomear as sombras que o mundo insiste em dizer que não existem.
+        </p>
+
+        <p>
+         Tem coisa mais estranha e horrível do que estar preso em um corpo de carne, com fezes na barriga, se decompondo a cada dia  e com desejos que nos escraviza ?
+        </p>
+
+        <p>
+          Por favor, não chamem isso de paraíso se as portas não estão abertas para a grande maioria de suas criações.
+        </p>
+
+        <div class="article-grid">
+          <div>
+            <img class="article-image" src="../images/geminha.jpeg" alt="Imagem da reportagem 2" />
+            <div class="image-caption">Legenda da imagem 2 — substituir pelo texto real da reportagem.</div>
+          </div>
+        </div>
+
+        <p>
+          Finalização da reportagem aqui com o fechamento da materia.
+        </p>
+      </div>
+    </article>
+
+    <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
+  </div>
+</body>
+</html>
+

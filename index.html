@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Congresso Teologia</title>
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  
+    <style id="9u3tql">
+    :root {
+      --bg-dark: #17171b;
+      --bg-surface: #1e1e25;
+      --bg-panel: #23232d;
+      --text-main: #f5f3ff;
+      --text-muted: #d0c9eb;
+      --border-soft: rgba(167, 139, 250, 0.45);
+      --purple-strong: #7c3aed;
+      --purple-soft: #a78bfa;
+      --purple-deep: #5b21b6;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+    }
+
+    .dashboard-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.12);
+    }
+    .dashboard-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
+    }
+    .banner-header {
+      border-radius: 1rem 1rem 0 0;
+      padding: 1.25rem 1.5rem;
+      color: white;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .banner-body {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-radius: 0 0 1rem 1rem;
+      border-top: 1px solid var(--border-soft);
+    }
+    .badge-purple {
+      background: var(--purple-strong) !important;
+      color: white !important;
+    }
+    .badge-soft {
+      background: rgba(167, 139, 250, 0.18) !important;
+      color: var(--text-main) !important;
+      border: 1px solid var(--border-soft);
+    }
+    .lead, .text-muted {
+      color: var(--text-muted) !important;
+    }
+    .title-accent {
+      color: var(--purple-soft);
+    }
+    @media (max-width: 767.98px) {
+      .row.g-4.justify-content-center {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    </style>
+  </head>
+
+<body>
+  <main class="container py-5">
+    <div class="text-center mb-5">
+      <span class="badge badge-purple rounded-pill px-3 py-2 mb-3">Congresso Mulheres e Ciência</span>
+      <h1 class="display-5 fw-bold title-accent">Dignidade e reconhecimento</h1>
+      <p class="lead mx-auto" style="max-width: 700px;">
+        Uma leitura sobre a importância de reconhecer o papel das mulheres na ciência e um desafio para testar o que foi aprendido.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6">
+        <a href="paginas/reportagem.html" class="text-decoration-none d-block h-100">
+          <div class="card h-100 dashboard-card" style="border-radius: 1rem; min-height: 340px;">
+            <div class="banner-header" style="background: linear-gradient(135deg, #4d6bd8, #2d3e91);">
+              <span class="badge badge-soft mb-3">Reportagem</span>
+              <h2 class="fw-bold mb-0">Reportagem</h2>
+            </div>
+            <div class="card-body banner-body d-flex flex-column justify-content-between p-4 p-lg-5">
+              <p class="mb-3">
+                Conheça o tema central do projeto: a luta por dignidade, visibilidade e reconhecimento das mulheres na ciência.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li>• Contexto histórico e social</li>
+                <li>• Importância da representatividade</li>
+                <li>• Ações e desafios do congresso</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <a href="paginas/quiz.html" class="text-decoration-none d-block h-100">
+          <div class="card h-100 dashboard-card" style="border-radius: 1rem; min-height: 340px;">
+            <div class="banner-header" style="background: linear-gradient(135deg, #2f9e8b, #1e6a5f);">
+              <span class="badge badge-soft mb-3">Quiz</span>
+              <h2 class="fw-bold mb-0">Quiz</h2>
+            </div>
+            <div class="card-body banner-body d-flex flex-column justify-content-between p-4 p-lg-5">
+              <p class="mb-3">
+                Teste seus conhecimentos após a leitura da reportagem. As perguntas são baseadas no conteúdo apresentado ali.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li>• Requer leitura da reportagem</li>
+                <li>• Avalia compreensão do tema</li>
+                <li>• Explora as ideias principais do congresso</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
