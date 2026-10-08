@@ -81,21 +81,15 @@
     }
 
     .article-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      margin: 30px 0;
+      max-width: 500px; 
+      margin: 0 auto;   
+      text-align: center;
     }
 
     .article-image {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-      background: #f3f4f6;
-      min-height: 260px;
-      object-fit: cover;
-      display: block;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      width: 100%;     
+      height: auto;    
+      border-radius: 8px;
     }
 
     .image-caption {
@@ -149,68 +143,64 @@
       <small>Congresso Mulheres e Ciência</small>
       <h1>Dignidade e reconhecimento</h1>
     </header>
+    <article class="article-card">
+  <div class="article-body">  
+    <h1 class="article-title">Mulheres na ciência: história e desafios contemporâneos</h1>
+    <p class="lead">
+    <p>
+      Desde os primórdios, as mulheres são subestimadas. Cada um com suas devidas atribuições: o homem, inteligente, provedor, o patriarca da casa; a mulher, cuidadora do lar, filhos e responsável por todas as atividades domésticas. Ser uma boa esposa ou filha vem desde o começo dos tempos: não opinar, não responder, mas sempre obedecer e não pode fazer algo melhor que um homem faça.
+    </p>
+    <p>
+      Na idade média, a mulher era tratada como um ser insignificante. Com a grande influência e poder da Igreja Católica na sociedade, as mulheres sofreram perseguições. De acordo com historiadores, cerca de 100 mil mulheres foram executadas durante o movimento caça às bruxas. Tudo o que se divergia do que era estabelecido pela Igreja eram apontados como bruxaria e as mulheres eram condenadas a fogueira.
+    </p>
+    <p>
+      Mas como sobreviver em uma sociedade sem acesso a serviços e direitos econômicos, políticos e sociais? Os direitos das mulheres vêm de um longo processo histórico. 
+    </p>
+    <h2 class="section-title">Conheça algumas mulheres brilhantes da Ciência:</h2>
+    <div class="profile-section">
+      <h3>Florence Nightingale</h3>
+            <figure class="article-grid">
+        <img class="article-image" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" alt="Retrato histórico de Florence Nightingale" />
+        <figcaption class="image-caption">
+          <strong>Fonte da imagem:</strong> <a href="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" target="_blank" rel="noopener noreferrer">Wikimedia</a>
+        </figcaption>
+      </figure>
+      <p>
+        Florence Nightingale, fundadora da Enfermagem moderna, tratou e cuidou dos feridos em batalhas, na Guerra da Crimeia (1853-1856). Florence percorria a noite, com uma lâmpada nas mãos até o local onde estava os soldados feridos, para cuidar dos seus pacientes. Em 1859, desenvolveu um projeto da Escola de Enfermagem do Hospital Saint Thomas, em Londres, hoje parte do King’s College London. O curso tinha duração de cerca de um ano, com todas as aulas ministradas por médicos. Seu nome também batiza o juramento e a medalha concedidos a profissionais da área, além do Dia Internacional da Enfermagem, celebrado em seu aniversário.  
+      </p>
+    </div>
+    <div class="profile-section">
+      <h3>Marie Curie</h3>
+      <figure class="article-grid">
+        <img class="article-image" src="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" alt="Marie Curie no laboratório" />
+        <figcaption class="image-caption">
+          <strong>Fonte da imagem:</strong> <a href="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" target="_blank" rel="noopener noreferrer">Britannica</a>
+        </figcaption>
+      </figure>
+      <p>
+        Marie Curie, uma das cientistas mais importantes do campo de radioatividade, descobriu dois novos elementos químicos: o polônio e o rádio. Com isso, foram revelados que alguns materiais podem emitir energia por muito tempo, sem uma fonte externa. Curie percebeu que a radiação poderia ser usada como um certo tipo de tratamento para destruir células doentes no corpo humano. Atualmente, o tratamento é conhecido como radioterapia, e utiliza radiação para destruir células cancerígenas para combater o câncer.A cientista foi a primeira mulher a ganhar um Prêmio Nobel e única a ganhar dois prêmios em áreas diferentes: Física e Química.
+      </p>
+    </div>
+    <div class="profile-section">
+      <h3>Joana d'Arc</h3>
+      <div class="profile-content">
+        <figure class="article-grid">
+          <img class="article-image" src="../images/Joanna.jpg" alt="Representação de Joana d'Arc" />
+          <figcaption class="image-caption">Esta imagem foi retirada do site <a href="https://pt.wikipedia.org/wiki/Ficheiro:Ingres_coronation_charles_vii.jpg" target="_blank" rel="noopener noreferrer">Wikipedia</a>.</figcaption>
+        </figure>
+        <div class="profile-text">
+          <p>
+            Conhecida como “Donzela de Orleans”, Joana D’Arc foi uma guerreira militar, alcançando a liderança do exército na França. Joana d’Arc afirmava receber orientações de São Miguel Arcanjo e das santas Catarina de Alexandria e Margarida de Antioquia. Segundo seu relato, essas vozes a instruíram a apoiar o delfim Carlos, posteriormente coroado como Carlos VII, e a expulsar os ingleses do território francês. Em 1429, Carlos enviou Joana a Orleães como parte de um exército de socorro, que conseguiu romper o cerco em apenas nove dias, conseguindo sair vitoriosa.
+          </p>
 
-        <div class="article-grid">
-          <div>
-            <video controls preload="metadata" class="article-image">
-              <source src="../video/reportagem.mp4" type="video/mp4">
-              O teu browser não suporta o elemento de vídeo.
-            </video>
-            <div class="image-caption">Legenda do vídeo — substituir pelo texto real da reportagem.</div>
-          </div>
+          <p>
+            Após o fracasso na tentativa de retomar Paris, com o Cerco de Paris, a influência de Joana d’Arc entre a nobreza francesa diminuiu. Em 23 de maio de 1430, ela foi capturada em Compiègne pelos borguinhões, aliados dos ingleses, e entregue a um tribunal eclesiástico presidido pelo bispo Pierre Cauchon. Condenada por heresia, Joana foi executada na fogueira em 30 de maio de 1431, aos 19 anos, e posteriormente transformada em símbolo do patriotismo francês. Em 1456, uma revisão anulou sua condenação, e Joana foi declarada inocente; séculos depois, foi beatificada, em 1909, e canonizada, em 1920, pela Igreja Católica Romana.
+          </p>
         </div>
         
-           <article class="article-card">
-          <audio controls preload="metadata" class="audio-player">
-            <source src="../audio/reportagem.mp3" type="audio/mpeg">
-          </audio>
-          </article>
-
-    <article class="article-card">
-      <div class="article-body">
-        <p class="lead">
-          atores vemos, costumes não sabemos.
-        </p>
-
-        <p>
-          Você passa a vida inteira tentando se conhecer. O problema é que o instrumento que você usa pra isso é o mesmo que fabrica as mentiras sobre você.
-        </p>
-
-        <p>
-          Casamento é prolongar uma ilusão pela vida toda
-
-        <div class="article-grid">
-          <div>
-            <img class="article-image" src="../images/unnamed.jpg" alt="Imagem da reportagem 1" />
-            <div class="image-caption">Legenda da imagem 1 — substituir pelo texto real da reportagem.</div>
-          </div>
-        </div>
-
-        <p>
-         A importância de ler não reside em encontrar a luz, mas em aprender a nomear as sombras que o mundo insiste em dizer que não existem.
-        </p>
-
-        <p>
-         Tem coisa mais estranha e horrível do que estar preso em um corpo de carne, com fezes na barriga, se decompondo a cada dia  e com desejos que nos escraviza ?
-        </p>
-
-        <p>
-          Por favor, não chamem isso de paraíso se as portas não estão abertas para a grande maioria de suas criações.
-        </p>
-
-        <div class="article-grid">
-          <div>
-            <img class="article-image" src="../images/geminha.jpeg" alt="Imagem da reportagem 2" />
-            <div class="image-caption">Legenda da imagem 2 — substituir pelo texto real da reportagem.</div>
-          </div>
-        </div>
-
-        <p>
-          Finalização da reportagem aqui com o fechamento da materia.
-        </p>
       </div>
-    </article>
-
+  </div>
+</article>
     <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
   </div>
 </body>

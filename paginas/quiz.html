@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,19 +7,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <style>
     :root {
-      --bg-dark: #17171b;
-      --bg-surface: #1e1e25;
-      --bg-panel: #23232d;
-      --text-main: #f5f3ff;
-      --text-muted: #d0c9eb;
-      --border-soft: rgba(167, 139, 250, 0.45);
+      --bg-dark: #ffffff;
+      --bg-surface: #f8f9fa;
+      --bg-panel: #ffffff;
+      --text-main: #000000;
+      --text-muted: #4b5563;
+      --border-soft: #d1d5db;
       --purple-strong: #7c3aed;
       --purple-soft: #a78bfa;
       --purple-deep: #5b21b6;
       --blue-strong: #4d6bd8;
-      --green-strong: #2f9e8b;
-      --danger-soft: #ef4444;
-      --success-soft: #22c55e;
+      --green-strong: #15803d;
+      --danger-soft: #dc2626;
+      --success-soft: #16a34a;
     }
 
     * { box-sizing: border-box; }
@@ -27,7 +27,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(180deg, #120f1a 0%, #17171b 100%);
+      background: #ffffff;
       color: var(--text-main);
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -42,17 +42,17 @@
 
     .quiz-card {
       width: min(760px, 100%);
-      background: rgba(35, 35, 45, 0.94);
+      background: var(--bg-panel);
       border: 1px solid var(--border-soft);
       border-radius: 22px;
-      box-shadow: 0 20px 50px rgba(17, 17, 24, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
 
     .quiz-header {
       background: linear-gradient(135deg, var(--purple-strong), var(--purple-deep));
       padding: 24px 28px;
-      border-bottom: 1px solid var(--border-soft);
+      color: #ffffff;
     }
 
     .quiz-header h1 {
@@ -67,7 +67,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .quiz-body {
@@ -96,7 +96,7 @@
       gap: 16px;
       margin-bottom: 20px;
       padding: 12px 14px;
-      background: rgba(167, 139, 250, 0.08);
+      background: var(--bg-surface);
       border: 1px solid var(--border-soft);
       border-radius: 12px;
       color: var(--text-main);
@@ -113,23 +113,24 @@
     }
 
     .score-badge {
-      background: rgba(124, 58, 237, 0.18);
-      border: 1px solid var(--border-soft);
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid var(--purple-soft);
     }
 
     .timer-badge {
-      background: rgba(77, 107, 216, 0.15);
-      border: 1px solid rgba(77, 107, 216, 0.4);
+      background: rgba(77, 107, 216, 0.1);
+      border: 1px solid rgba(77, 107, 216, 0.3);
       min-width: 92px;
     }
 
     .question-label {
-      color: #c9c2ef;
+      color: var(--text-muted);
       font-size: 0.82rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       display: block;
       margin-bottom: 10px;
+      font-weight: bold;
     }
 
     .question-text {
@@ -145,7 +146,7 @@
     }
 
     .answer-option {
-      background: rgba(255, 255, 255, 0.02);
+      background: #ffffff;
       border: 1px solid var(--border-soft);
       color: var(--text-main);
       text-align: left;
@@ -154,26 +155,30 @@
       transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
       font-size: 1rem;
       line-height: 1.5;
+      cursor: pointer;
     }
 
-    .answer-option:hover {
+    .answer-option:hover:not(:disabled) {
       transform: translateY(-1px);
-      border-color: rgba(167, 139, 250, 0.9);
-      background: rgba(167, 139, 250, 0.06);
+      border-color: var(--purple-strong);
+      background: rgba(167, 139, 250, 0.05);
     }
 
     .answer-option.correct {
-      background: rgba(34, 197, 94, 0.14);
-      border-color: rgba(34, 197, 94, 0.7);
+      background: rgba(34, 197, 94, 0.15);
+      border-color: var(--success-soft);
+      color: #000000;
+      font-weight: bold;
     }
 
     .answer-option.wrong {
-      background: rgba(239, 68, 68, 0.12);
-      border-color: rgba(239, 68, 68, 0.75);
+      background: rgba(239, 68, 68, 0.1);
+      border-color: var(--danger-soft);
+      color: #000000;
     }
 
     .answer-option:disabled {
-      opacity: 1;
+      opacity: 0.8;
       cursor: not-allowed;
     }
 
@@ -181,7 +186,7 @@
       margin-top: 18px;
       min-height: 28px;
       font-weight: 600;
-      color: var(--text-main);
+      font-size: 1.1rem;
     }
 
     .result-score {
@@ -191,10 +196,11 @@
       height: 130px;
       margin: 0 auto 18px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(124,58,237,0.22), rgba(47,158,139,0.2));
-      border: 1px solid var(--border-soft);
+      background: rgba(124,58,237,0.1);
+      border: 2px solid var(--purple-strong);
       font-size: 2rem;
       font-weight: 800;
+      color: var(--purple-deep);
     }
 
     .result-title {
@@ -216,24 +222,7 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .back-link {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(124, 58, 237, 0.12);
-      border: 1px solid var(--border-soft);
-      color: var(--text-main);
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-
-    .back-link:hover {
-      background: rgba(124, 58, 237, 0.2);
-      color: white;
-      text-decoration: none;
+      margin-top: 24px;
     }
 
     .btn-primary-custom,
@@ -243,6 +232,10 @@
       padding: 12px 22px;
       font-weight: 700;
       transition: transform 0.15s ease, opacity 0.15s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
     }
 
     .btn-primary-custom {
@@ -250,38 +243,29 @@
       color: white;
     }
 
-    .btn-primary-custom:hover,
-    .btn-secondary-custom:hover {
+    .btn-primary-custom:hover {
       transform: translateY(-1px);
+      color: white;
     }
 
     .btn-secondary-custom {
-      background: transparent;
+      background: #ffffff;
       color: var(--text-main);
-      border-color: var(--border-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-secondary-custom:hover {
+      transform: translateY(-1px);
+      background: var(--bg-surface);
+      color: var(--text-main);
     }
 
     @media (max-width: 576px) {
-      .quiz-body {
-        padding: 20px 16px 24px;
-      }
-
-      .quiz-header {
-        padding: 20px 18px;
-      }
-
-      .status-row {
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .result-actions {
-        flex-direction: column;
-      }
-
-      .result-actions button {
-        width: 100%;
-      }
+      .quiz-body { padding: 20px 16px 24px; }
+      .quiz-header { padding: 20px 18px; }
+      .status-row { flex-wrap: wrap; justify-content: space-between; }
+      .result-actions { flex-direction: column; }
+      .result-actions button, .result-actions a { width: 100%; }
     }
   </style>
 </head>
@@ -294,16 +278,17 @@
       </header>
 
       <div class="quiz-body">
+        
         <div id="telaInicial" class="screen active">
           <p class="lead-text">
-            Veja a reportagem e teste o que você aprendeu sobre dignidade, visibilidade e reconhecimento das mulheres na ciência.
+            Veja a reportagem e teste o que aprendeu sobre dignidade, visibilidade e reconhecimento das mulheres na ciência.
           </p>
           <p class="lead-text">
-            Responda as perguntas em até 60 segundos cada uma. Uma resposta errada encerra a sequência.
+            Responda às perguntas em até 60 segundos cada uma.
           </p>
           <div class="result-actions">
             <button id="btnComecar" class="btn-primary-custom" type="button">Começar</button>
-            <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
+            <a href="../index.html" class="btn-secondary-custom">← Voltar ao menu principal</a>
           </div>
         </div>
 
@@ -315,21 +300,27 @@
 
           <div>
             <span class="question-label" id="numeroPergunta">Pergunta 1</span>
-            <div id="pergunta" class="question-text">Carregando pergunta…</div>
+            <div id="pergunta" class="question-text">A carregar pergunta…</div>
           </div>
 
           <div id="alternativas" class="answer-list" aria-label="Alternativas"></div>
+          
           <div id="feedback" class="feedback-box" aria-live="polite"></div>
+
+          <div id="acoesAposResposta" class="result-actions" style="display: none;">
+            <button id="btnProxima" class="btn-primary-custom" type="button">Próxima Questão</button>
+            <a href="../index.html" class="btn-secondary-custom">Voltar ao Menu</a>
+          </div>
         </div>
 
         <div id="telaResultado" class="screen">
           <div class="result-score" id="resultadoPercentual">0%</div>
           <div class="result-title" id="resultadoTitulo">Resultado</div>
-          <div class="result-subtitle" id="resultadoDescricao">Você terminou o quiz.</div>
+          <div class="result-subtitle" id="resultadoDescricao">Terminou o quiz.</div>
           <div class="result-subtitle" id="resultadoResumo">0/0 acertos</div>
           <div class="result-actions">
             <button id="btnReiniciar" class="btn-primary-custom" type="button">Reiniciar quiz</button>
-            <button id="btnVoltarInicio" class="btn-secondary-custom" type="button">Voltar para a tela inicial</button>
+            <a href="../index.html" class="btn-secondary-custom">Voltar ao menu principal</a>
           </div>
         </div>
       </div>
@@ -359,6 +350,7 @@
     const perguntaEl = document.getElementById('pergunta');
     const alternativasEl = document.getElementById('alternativas');
     const feedbackEl = document.getElementById('feedback');
+    const acoesAposRespostaEl = document.getElementById('acoesAposResposta');
     const resultadoPercentualEl = document.getElementById('resultadoPercentual');
     const resultadoTituloEl = document.getElementById('resultadoTitulo');
     const resultadoDescricaoEl = document.getElementById('resultadoDescricao');
@@ -386,12 +378,12 @@
     }
 
     function obterTextoResultado(percentual) {
-      if (percentual >= 100) return 'PArabéns, mas não tem brinde.';
+      if (percentual >= 100) return 'Parabéns!';
       if (percentual >= 99) return 'QUASE, mas muito quase mesmo.';
-      if (percentual >= 75) return 'BOA! continue assim.';
-      if (percentual >= 50) return 'Ta começando a entender aspira.';
-      if (percentual >= 25) return 'Ruim, mas tem potencial.';
-      if (percentual >= 10) return 'Peba, nem leu a reportagem.';
+      if (percentual >= 75) return 'BOA! Continue assim.';
+      if (percentual >= 50) return 'Está a começar a entender.';
+      if (percentual >= 25) return 'Fraco, mas tem potencial.';
+      if (percentual >= 10) return 'Precisa de ler melhor a reportagem.';
       return 'Ainda há muito por explorar. Volte à reportagem e tente novamente.';
     }
 
@@ -428,12 +420,13 @@
     }
 
     function avaliaResposta(opcao, pergunta, tempoEsgotado = false) {
-      limparTimer();
+      limparTimer(); 
       const botoes = alternativasEl.querySelectorAll('button');
       const respostaCorreta = pergunta.correta;
+      
       botoes.forEach((botao) => {
         const valor = botao.dataset.valor;
-        botao.disabled = true;
+        botao.disabled = true; 
 
         if (valor === respostaCorreta) {
           botao.classList.add('correct');
@@ -449,28 +442,16 @@
       if (acertou) {
         estado.pontuacao += 1;
         atualizarPontuacao();
-        feedbackEl.textContent = 'Resposta correta! Preparando a próxima pergunta…';
-        feedbackEl.style.color = '#9ae6b4';
+        feedbackEl.textContent = 'Resposta correta!';
+        feedbackEl.style.color = 'var(--success-soft)';
       } else {
         feedbackEl.textContent = tempoEsgotado
-          ? `Tempo esgotado! A resposta correta era: ${respostaCorreta}.`
-          : `Resposta incorreta. A resposta certa era: ${respostaCorreta}.`;
-        feedbackEl.style.color = '#fca5a5';
+          ? `Tempo esgotado! Gabarito: ${respostaCorreta}`
+          : `Resposta incorreta. Gabarito: ${respostaCorreta}`;
+        feedbackEl.style.color = 'var(--danger-soft)';
       }
 
-      setTimeout(() => {
-        if (acertou) {
-          estado.indiceAtual += 1;
-          if (estado.indiceAtual >= estado.perguntas.length) {
-            finalizarQuiz();
-            return;
-          }
-          renderPergunta();
-          return;
-        }
-
-        finalizarQuiz();
-      }, 1200);
+      acoesAposRespostaEl.style.display = 'flex';
     }
 
     function responderPergunta(opcao, pergunta, tempoEsgotado = false) {
@@ -478,6 +459,8 @@
     }
 
     function renderPergunta() {
+      acoesAposRespostaEl.style.display = 'none'; 
+      
       const perguntaAtual = estado.perguntas[estado.indiceAtual];
       if (!perguntaAtual) {
         finalizarQuiz();
@@ -487,7 +470,6 @@
       numeroPerguntaEl.textContent = `Pergunta ${estado.indiceAtual + 1}`;
       perguntaEl.textContent = perguntaAtual.pergunta;
       feedbackEl.textContent = '';
-      feedbackEl.style.color = 'var(--text-main)';
 
       const alternativasEmbaralhadas = quizServico.embaralharAlternativas(perguntaAtual);
       alternativasEl.innerHTML = '';
@@ -515,17 +497,19 @@
       renderPergunta();
     }
 
-    document.getElementById('btnComecar').addEventListener('click', iniciarQuiz);
-    document.getElementById('btnReiniciar').addEventListener('click', iniciarQuiz);
-    document.getElementById('btnVoltarInicio').addEventListener('click', () => {
-      limparTimer();
-      mostrarTela('inicial');
+    document.getElementById('btnProxima').addEventListener('click', () => {
+      estado.indiceAtual += 1;
+      if (estado.indiceAtual >= estado.perguntas.length) {
+        finalizarQuiz();
+      } else {
+        renderPergunta();
+      }
     });
 
+    document.getElementById('btnComecar').addEventListener('click', iniciarQuiz);
+    document.getElementById('btnReiniciar').addEventListener('click', iniciarQuiz);
+    
     mostrarTela('inicial');
-  </script>
-</body>
-</html>
   </script>
 </body>
 </html>
