@@ -52,6 +52,168 @@ export const QUIZ_PADRAO = [
       "Anulação em 1500; Beatificação em 1856; Canonização em 1920.",
       "Anulação em 1456; Beatificação em 1920; Canonização em 1909."
     ]
+  },
+  {
+    pergunta: "Qual era uma das principais dificuldades enfrentadas pelas mulheres ao longo da história, segundo a reportagem?",
+    correta: "A falta de acesso a direitos e serviços econômicos, políticos e sociais.",
+    incorretas: [
+      "A proibição de participar de atividades relacionadas à agricultura.",
+      "A obrigação de exercer exclusivamente atividades científicas.",
+      "A falta de acesso a qualquer tipo de educação religiosa."
+    ]
+  },
+  {
+    pergunta: "Qual era uma das características atribuídas à mulher na sociedade descrita no início da reportagem?",
+    correta: "Era vista como cuidadora do lar e dos filhos e responsável pelas atividades domésticas.",
+    incorretas: [
+      "Era considerada responsável pela administração política das cidades.",
+      "Era vista como principal autoridade religiosa da família.",
+      "Era considerada responsável pela liderança dos exércitos."
+    ]
+  },
+  {
+    pergunta: "O que Florence Nightingale fazia durante a Guerra da Crimeia?",
+    correta: "Tratava e cuidava dos soldados feridos nas batalhas.",
+    incorretas: [
+      "Comandava tropas francesas durante os conflitos.",
+      "Desenvolvia armas para os soldados britânicos.",
+      "Atuava como diplomata nas negociações de paz."
+    ]
+  },
+  {
+    pergunta: "Por que Florence Nightingale ficou conhecida pela imagem de percorrer os locais à noite com uma lâmpada?",
+    correta: "Porque visitava os soldados feridos para cuidar de seus pacientes.",
+    incorretas: [
+      "Porque procurava soldados desaparecidos durante as batalhas.",
+      "Porque conduzia os soldados para fora dos campos de batalha.",
+      "Porque estudava os efeitos da iluminação nos hospitais."
+    ]
+  },
+  {
+    pergunta: "O que Florence Nightingale desenvolveu em 1859?",
+    correta: "Um projeto da Escola de Enfermagem do Hospital Saint Thomas, em Londres.",
+    incorretas: [
+      "O primeiro hospital militar da França.",
+      "Um tratamento baseado em radioatividade.",
+      "Uma escola de medicina especializada em cirurgia."
+    ]
+  },
+  {
+    pergunta: "O que as pesquisas de Marie Curie revelaram sobre alguns materiais?",
+    correta: "Que alguns materiais podem emitir energia por muito tempo sem uma fonte externa.",
+    incorretas: [
+      "Que todos os materiais emitem energia apenas quando aquecidos.",
+      "Que a energia dos materiais depende exclusivamente da luz solar.",
+      "Que os materiais radioativos deixam de emitir energia imediatamente após serem descobertos."
+    ]
+  },
+  {
+    pergunta: "Para qual finalidade Marie Curie percebeu que a radiação poderia ser utilizada?",
+    correta: "Como uma forma de tratamento para destruir células doentes no corpo humano.",
+    incorretas: [
+      "Para substituir completamente os medicamentos tradicionais.",
+      "Para produzir energia elétrica em hospitais.",
+      "Para impedir a formação de qualquer tipo de célula no organismo."
+    ]
+  },
+  {
+    pergunta: "Qual é o nome do tratamento que utiliza radiação para destruir células cancerígenas?",
+    correta: "Radioterapia.",
+    incorretas: [
+      "Quimioterapia.",
+      "Fisioterapia.",
+      "Imunoterapia."
+    ]
+  },
+  {
+    pergunta: "Qual era o objetivo de Joana d'Arc ao apoiar o delfim Carlos, segundo seus relatos?",
+    correta: "Expulsar os ingleses do território francês.",
+    incorretas: [
+      "Conquistar o território inglês.",
+      "Assumir o trono da França.",
+      "Estabelecer uma nova escola militar em Orleães."
+    ]
+  },
+  {
+    pergunta: "O que aconteceu quando Joana d'Arc foi enviada a Orleães em 1429?",
+    correta: "O exército de socorro conseguiu romper o cerco em apenas nove dias.",
+    incorretas: [
+      "O exército francês foi derrotado imediatamente.",
+      "Joana foi capturada pelos ingleses durante o primeiro dia.",
+      "O cerco foi abandonado pelos franceses antes de qualquer combate."
+    ]
+  },
+  {
+    pergunta: "Por que a influência de Joana d'Arc entre a nobreza francesa diminuiu?",
+    correta: "Após o fracasso na tentativa de retomar Paris, durante o Cerco de Paris.",
+    incorretas: [
+      "Porque ela abandonou o exército francês após a vitória em Orleães.",
+      "Porque foi derrotada durante a Guerra da Crimeia.",
+      "Porque foi acusada de praticar medicina sem autorização."
+    ]
+  },
+  {
+    pergunta: "Qual acontecimento transformou Joana d'Arc posteriormente em símbolo do patriotismo francês?",
+    correta: "Sua execução após ser condenada por heresia e sua posterior transformação em símbolo nacional.",
+    incorretas: [
+      "Sua participação na fundação da Escola de Enfermagem de Londres.",
+      "Sua descoberta de novos elementos químicos.",
+      "Sua atuação na criação da radioterapia."
+    ]
+  },
+  {
+    pergunta: "Qual é a ideia central do tema do congresso 'Mulheres e ciência: dignidade e reconhecimento à luz da magnifica humanitas'?",
+    correta: "Reconhecer o papel das mulheres na ciência e valorizar a dignidade humana em sua contribuição para a sociedade.",
+    incorretas: [
+      "Destacar o protagonismo feminino apenas em contextos de guerra e liderança política, como se isso equivalesse ao debate científico.",
+      "Entender a ciência como um campo prioritariamente técnico, em que ética, dignidade e inclusão social são assuntos periféricos.",
+      "Focar a discussão no avanço tecnológico e na produtividade individual, sem considerar as desigualdades históricas de gênero."
+    ]
+  },
+  {
+    pergunta: "Por que o reconhecimento das mulheres na ciência é importante para a sociedade?",
+    correta: "Porque amplia a visibilidade, fortalece a justiça social e valoriza contribuições históricas que muitas vezes foram ignoradas.",
+    incorretas: [
+      "Porque a ciência se torna mais eficiente quando a participação é restrita a grupos considerados mais preparados socialmente.",
+      "Porque a equidade social pode ser resolvida apenas pela expansão de laboratórios e de infraestrutura tecnológica.",
+      "Porque a análise histórica da ciência deve ser substituída por critérios puramente econômicos de produtividade."
+    ]
+  },
+  {
+    pergunta: "Qual das alternativas melhor resume a relação entre dignidade humana e ciência, segundo a proposta do congresso?",
+    correta: "A ciência deve ser pensada como espaço de inclusão, valorização e reconhecimento da contribuição humana em todas as suas dimensões.",
+    incorretas: [
+      "A ciência deve ser orientada prioritariamente pela eficiência técnica, deixando em segundo plano os valores humanos e as desigualdades sociais.",
+      "A dignidade humana está mais ligada à visibilidade pública e ao prestígio social do que aos direitos, à igualdade e às oportunidades.",
+      "A contribuição feminina na ciência é relevante apenas quando se relaciona diretamente ao cuidado, à vida doméstica e aos espaços tradicionais de gênero."
+    ]
+  },
+  {
+    pergunta: "O texto apresenta a história das mulheres na ciência como um processo marcado por quais elementos principais?",
+    correta: "Desigualdade histórica, exclusão social e luta por visibilidade e reconhecimento.",
+    incorretas: [
+      "Progresso contínuo e ausência de obstáculos, em que a participação feminina sempre foi reconhecida de forma igualitária.",
+      "Um avanço puramente técnico, sem relação com relações de poder, exclusão social ou disputas históricas.",
+      "Conquistas rápidas e definitivas, sem resistência, apagamento ou contestação dos saberes femininos."
+    ]
+  },
+  {
+    pergunta: "Qual palavra expressa a ideia de valor humano e de plena dignidade presente no tema do congresso?",
+    correta: "Magnifica humanitas.",
+    incorretas: [
+      "Humanidade contemporânea.",
+      "Cultura científica.",
+      "Tradição humanística."
+    ]
+  },
+  {
+    pergunta: "O congresso foi pensado para discutir, principalmente, qual questão central?",
+    correta: "A visibilidade, a dignidade e o reconhecimento das mulheres na ciência.",
+    incorretas: [
+      "A organização de eventos científicos focados apenas na divulgação de pesquisas aplicadas e no desempenho institucional.",
+      "A definição de critérios para separar ciência, cultura e religião em todos os campos do conhecimento.",
+      "O debate sobre produtividade acadêmica sem considerar as desigualdades históricas de acesso e reconhecimento."
+    ]
   }
 ];
 
