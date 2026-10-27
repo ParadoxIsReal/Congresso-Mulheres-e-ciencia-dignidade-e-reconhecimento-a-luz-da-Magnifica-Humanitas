@@ -37,7 +37,7 @@
       padding: 20px 24px;
       margin-bottom: 32px;
       box-shadow: 0 12px 24px rgba(124, 58, 237, 0.18);
-      color: #ffffff; /* Garante texto branco no cabeçalho roxo */
+      color: #ffffff; 
     }
 
     .topbar h1 {
@@ -60,7 +60,7 @@
       border: 1px solid #e5e7eb;
       border-radius: 18px;
       padding: 32px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra mais subtil para fundo branco */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
     }
 
     .article-body {
@@ -74,15 +74,9 @@
       color: var(--text-main);
     }
 
-    .article-body .lead {
-      color: #374151;
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-
     .article-grid {
-      max-width: 500px; 
-      margin: 0 auto;   
+      flex: 0 0 300px; 
+      margin: 0;   
       text-align: center;
     }
 
@@ -98,6 +92,17 @@
       text-align: center;
       margin-top: 10px;
       font-style: italic;
+    }
+
+    .profile-content {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .profile-text {
+      flex: 1; 
     }
 
     .back-link {
@@ -118,21 +123,22 @@
       text-decoration: none;
     }
 
-    .audio-player {
-      width: 100%;
-      max-width: 1000px;
-    }
-
-    .article-card + .article-card {
-      margin-top: 20px;
-    }
-
     @media (max-width: 768px) {
       .reportagem-shell {
         padding-top: 24px;
       }
       .article-card {
         padding: 20px 16px;
+      }
+      
+      .profile-content {
+        flex-direction: column;
+      }
+      .article-grid {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 16px auto;
       }
     }
   </style>
@@ -143,66 +149,92 @@
       <small>Congresso Mulheres e Ciência</small>
       <h1>Dignidade e reconhecimento</h1>
     </header>
+    
     <article class="article-card">
-  <div class="article-body">  
-    <h1 class="article-title">Mulheres na ciência: história e desafios contemporâneos</h1>
-    <p class="lead">
-    <p>
-      Desde os primórdios, as mulheres são subestimadas. Cada um com suas devidas atribuições: o homem, inteligente, provedor, o patriarca da casa; a mulher, cuidadora do lar, filhos e responsável por todas as atividades domésticas. Ser uma boa esposa ou filha vem desde o começo dos tempos: não opinar, não responder, mas sempre obedecer e não pode fazer algo melhor que um homem faça.
-    </p>
-    <p>
-      Na idade média, a mulher era tratada como um ser insignificante. Com a grande influência e poder da Igreja Católica na sociedade, as mulheres sofreram perseguições. De acordo com historiadores, cerca de 100 mil mulheres foram executadas durante o movimento caça às bruxas. Tudo o que se divergia do que era estabelecido pela Igreja eram apontados como bruxaria e as mulheres eram condenadas a fogueira.
-    </p>
-    <p>
-      Mas como sobreviver em uma sociedade sem acesso a serviços e direitos econômicos, políticos e sociais? Os direitos das mulheres vêm de um longo processo histórico. 
-    </p>
-    <h2 class="section-title">Conheça algumas mulheres brilhantes da Ciência:</h2>
-    <div class="profile-section">
-      <h3>Florence Nightingale</h3>
+      <figure style="max-width: 600px; margin: 0 auto 20px auto; text-align: center;">
+        <img src="../images/primeira_imagem.jpeg" alt="Mulheres pioneiras na ciência" style="width: 100%; height: auto; display: block; border-radius: 12px;" />
+      </figure>
+      
+      <div class="article-body">  
+        <h1 class="article-title">Mulheres na ciência: história e desafios contemporâneos</h1>
+        
+        <div class="audio-player-container" style="margin: 24px 0;">
+          <p style="margin-bottom: 8px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);">
+          </p>
+          <audio controls style="width: 100%; border-radius: 8px;">
+            <source src="../audio/podcast.mpeg" type="audio/mpeg">
+          </audio>
+        </div>
+        <p>
+          Desde os primórdios, as mulheres são subestimadas. Cada um com suas devidas atribuições: o homem, inteligente, provedor, o patriarca da casa; a mulher, cuidadora do lar, filhos e responsável por todas as atividades domésticas. Ser uma boa esposa ou filha vem desde o começo dos tempos: não opinar, não responder, mas sempre obedecer e não pode fazer algo melhor que um homem faça.
+        </p>
+        <p>
+          Na idade média, a mulher era tratada como um ser insignificante. Com a grande influência e poder da Igreja Católica na sociedade, as mulheres sofreram perseguições. De acordo com historiadores, cerca de 100 mil mulheres foram executadas durante o movimento caça às bruxas. Tudo o que se divergia do que era estabelecido pela Igreja eram apontados como bruxaria e as mulheres eram condenadas a fogueira.
+        </p>
+        <p>
+          Mas como sobreviver em uma sociedade sem acesso a serviços e direitos econômicos, políticos e sociais? Os direitos das mulheres vêm de um longo processo histórico. 
+        </p>
+        
+        <h2 class="section-title" style="margin-top: 40px; margin-bottom: 24px;">Conheça algumas mulheres brilhantes da Ciência:</h2>
+        
+        <div class="profile-section">
+          <h3>Florence Nightingale</h3>
+          <div class="profile-content">
             <figure class="article-grid">
-        <img class="article-image" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" alt="Retrato histórico de Florence Nightingale" />
-        <figcaption class="image-caption">
-          <strong>Fonte da imagem:</strong> <a href="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" target="_blank" rel="noopener noreferrer">Wikimedia</a>
-        </figcaption>
-      </figure>
-      <p>
-        Florence Nightingale, fundadora da Enfermagem moderna, tratou e cuidou dos feridos em batalhas, na Guerra da Crimeia (1853-1856). Florence percorria a noite, com uma lâmpada nas mãos até o local onde estava os soldados feridos, para cuidar dos seus pacientes. Em 1859, desenvolveu um projeto da Escola de Enfermagem do Hospital Saint Thomas, em Londres, hoje parte do King’s College London. O curso tinha duração de cerca de um ano, com todas as aulas ministradas por médicos. Seu nome também batiza o juramento e a medalha concedidos a profissionais da área, além do Dia Internacional da Enfermagem, celebrado em seu aniversário.  
-      </p>
-    </div>
-    <div class="profile-section">
-      <h3>Marie Curie</h3>
-      <figure class="article-grid">
-        <img class="article-image" src="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" alt="Marie Curie no laboratório" />
-        <figcaption class="image-caption">
-          <strong>Fonte da imagem:</strong> <a href="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" target="_blank" rel="noopener noreferrer">Britannica</a>
-        </figcaption>
-      </figure>
-      <p>
-        Marie Curie, uma das cientistas mais importantes do campo de radioatividade, descobriu dois novos elementos químicos: o polônio e o rádio. Com isso, foram revelados que alguns materiais podem emitir energia por muito tempo, sem uma fonte externa. Curie percebeu que a radiação poderia ser usada como um certo tipo de tratamento para destruir células doentes no corpo humano. Atualmente, o tratamento é conhecido como radioterapia, e utiliza radiação para destruir células cancerígenas para combater o câncer.A cientista foi a primeira mulher a ganhar um Prêmio Nobel e única a ganhar dois prêmios em áreas diferentes: Física e Química.
-      </p>
-    </div>
-    <div class="profile-section">
-      <h3>Joana d'Arc</h3>
-      <div class="profile-content">
-        <figure class="article-grid">
-          <img class="article-image" src="../images/Joanna.jpg" alt="Representação de Joana d'Arc" />
-          <figcaption class="image-caption">Esta imagem foi retirada do site <a href="https://pt.wikipedia.org/wiki/Ficheiro:Ingres_coronation_charles_vii.jpg" target="_blank" rel="noopener noreferrer">Wikipedia</a>.</figcaption>
-        </figure>
-        <div class="profile-text">
-          <p>
-            Conhecida como “Donzela de Orleans”, Joana D’Arc foi uma guerreira militar, alcançando a liderança do exército na França. Joana d’Arc afirmava receber orientações de São Miguel Arcanjo e das santas Catarina de Alexandria e Margarida de Antioquia. Segundo seu relato, essas vozes a instruíram a apoiar o delfim Carlos, posteriormente coroado como Carlos VII, e a expulsar os ingleses do território francês. Em 1429, Carlos enviou Joana a Orleães como parte de um exército de socorro, que conseguiu romper o cerco em apenas nove dias, conseguindo sair vitoriosa.
-          </p>
+              <img class="article-image" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" alt="Retrato histórico de Florence Nightingale" />
+              <figcaption class="image-caption">
+                <strong>Fonte:</strong> <a href="https://upload.wikimedia.org/wikipedia/commons/4/40/Florence_Nightingale_1920_reproduction.jpg" target="_blank" rel="noopener noreferrer">Wikimedia</a>
+              </figcaption>
+            </figure>
+            <div class="profile-text">
+              <p>
+                Florence Nightingale, fundadora da Enfermagem moderna, tratou e cuidou dos feridos em batalhas, na Guerra da Crimeia (1853-1856). Florence percorria a noite, com uma lâmpada nas mãos até o local onde estava os soldados feridos, para cuidar dos seus pacientes. Em 1859, desenvolveu um projeto da Escola de Enfermagem do Hospital Saint Thomas, em Londres, hoje parte do King’s College London. O curso tinha duração de cerca de um ano, com todas as aulas ministradas por médicos. Seu nome também batiza o juramento e a medalha concedidos a profissionais da área, além do Dia Internacional da Enfermagem, celebrado em seu aniversário.  
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <p>
-            Após o fracasso na tentativa de retomar Paris, com o Cerco de Paris, a influência de Joana d’Arc entre a nobreza francesa diminuiu. Em 23 de maio de 1430, ela foi capturada em Compiègne pelos borguinhões, aliados dos ingleses, e entregue a um tribunal eclesiástico presidido pelo bispo Pierre Cauchon. Condenada por heresia, Joana foi executada na fogueira em 30 de maio de 1431, aos 19 anos, e posteriormente transformada em símbolo do patriotismo francês. Em 1456, uma revisão anulou sua condenação, e Joana foi declarada inocente; séculos depois, foi beatificada, em 1909, e canonizada, em 1920, pela Igreja Católica Romana.
-          </p>
+        <div class="profile-section">
+          <h3>Marie Curie</h3>
+          <div class="profile-content">
+            <figure class="article-grid">
+              <img class="article-image" src="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" alt="Marie Curie no laboratório" />
+              <figcaption class="image-caption">
+                <strong>Fonte:</strong> <a href="https://cdn.britannica.com/10/74610-050-19CB330C/Marie-Curie-Paris-laboratory.jpg" target="_blank" rel="noopener noreferrer">Britannica</a>
+              </figcaption>
+            </figure>
+            <div class="profile-text">
+              <p>
+                Marie Curie, uma das cientistas mais importantes do campo de radioatividade, descobriu dois novos elementos químicos: o polônio e o rádio. Com isso, foram revelados que alguns materiais podem emitir energia por muito tempo, sem uma fonte externa. Curie percebeu que a radiação poderia ser usada como um certo tipo de tratamento para destruir células doentes no corpo humano. Atualmente, o tratamento é conhecido como radioterapia, e utiliza radiação para destruir células cancerígenas para combater o câncer. A cientista foi a primeira mulher a ganhar um Prêmio Nobel e única a ganhar dois prêmios em áreas diferentes: Física e Química.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section">
+          <h3>Joana d'Arc</h3>
+          <div class="profile-content">
+            <figure class="article-grid">
+              <img class="article-image" src="../images/Joanna.jpg" alt="Representação de Joana d'Arc" />
+              <figcaption class="image-caption">
+                <strong>Fonte:</strong> <a href="https://pt.wikipedia.org/wiki/Ficheiro:Ingres_coronation_charles_vii.jpg" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+              </figcaption>
+            </figure>
+            <div class="profile-text">
+              <p>
+                Conhecida como “Donzela de Orleans”, Joana D’Arc foi uma guerreira militar, alcançando a liderança do exército na França. Joana d’Arc afirmava receber orientações de São Miguel Arcanjo e das santas Catarina de Alexandria e Margarida de Antioquia. Segundo seu relato, essas vozes a instruíram a apoiar o delfim Carlos, posteriormente coroado como Carlos VII, e a expulsar os ingleses do território francês. Em 1429, Carlos enviou Joana a Orleães como parte de um exército de socorro, que conseguiu romper o cerco em apenas nove dias, conseguindo sair vitoriosa.
+              </p>
+              <p>
+                Após o fracasso na tentativa de retomar Paris, com o Cerco de Paris, a influência de Joana d’Arc entre a nobreza francesa diminuiu. Em 23 de maio de 1430, ela foi capturada em Compiègne pelos borguinhões, aliados dos ingleses, e entregue a um tribunal eclesiástico presidido pelo bispo Pierre Cauchon. Condenada por heresia, Joana foi executada na fogueira em 30 de maio de 1431, aos 19 anos, e posteriormente transformada em símbolo do patriotismo francês. Em 1456, uma revisão anulou sua condenação, e Joana foi declarada inocente; séculos depois, foi beatificada, em 1909, e canonizada, em 1920, pela Igreja Católica Romana.
+              </p>
+            </div>
+          </div>
         </div>
         
       </div>
-  </div>
-</article>
+    </article>
+    
     <a href="../index.html" class="back-link">← Voltar para a página inicial</a>
   </div>
 </body>
 </html>
-
