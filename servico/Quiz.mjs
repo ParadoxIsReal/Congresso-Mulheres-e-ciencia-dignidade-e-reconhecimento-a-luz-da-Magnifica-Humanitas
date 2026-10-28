@@ -1,13 +1,15 @@
 export const QUIZ_PADRAO = [
+  //1
   {
-    pergunta: "De acordo com o texto, qual era a estimativa de mulheres executadas durante o movimento de caça às bruxas na Idade Média, e qual era a principal justificativa da Igreja Católica?",
-    correta: "Cerca de 100 mil mulheres; tudo o que divergia do estabelecido pela Igreja era apontado como bruxaria.",
+    pergunta: "De acordo com o texto, qual é a estimativa de pessoas executadas durante a caça às bruxas na Europa e na América colonial (séculos XV a XVIII), e o que influenciava as acusações?",
+    correta: "Entre 40 mil e 60 mil pessoas, a maioria mulheres; as acusações eram influenciadas por crenças religiosas, tensões sociais e concepções sobre o papel das mulheres.",
     incorretas: [
-      "Cerca de 50 mil mulheres; foram condenadas por heresia ao tentarem acessar direitos políticos e econômicos.",
-      "Cerca de 100 mil mulheres; foram acusadas de praticar medicina sem a devida autorização do patriarca da casa.",
-      "Cerca de 200 mil mulheres; eram apontadas como bruxas por se recusarem a casar e servir aos propósitos do lar."
+      "Cerca de 100 mil mulheres; as acusações partiam exclusivamente da Igreja Católica contra tudo o que divergia de suas doutrinas.",
+      "Entre 40 mil e 60 mil pessoas, todas mulheres; foram condenadas apenas por tribunais religiosos por praticarem medicina sem autorização.",
+      "Cerca de 200 mil pessoas, a maioria homens; as acusações eram motivadas somente por disputas políticas entre reinos."
     ]
   },
+  //2
   {
     pergunta: "Florence Nightingale, fundadora da Enfermagem moderna, ganhou destaque por sua atuação em qual conflito histórico e em qual período?",
     correta: "Guerra da Crimeia, entre os anos de 1853 e 1856.",
@@ -17,6 +19,7 @@ export const QUIZ_PADRAO = [
       "Guerra Franco-Prussiana, durante os anos de 1870 a 1871."
     ]
   },
+  //3
   {
     pergunta: "Marie Curie foi pioneira no campo da radioatividade. Quais foram os dois elementos químicos descobertos por ela e qual foi o seu feito inédito no Prêmio Nobel?",
     correta: "Polônio e Rádio; foi a primeira mulher a ganhar um Nobel e a única a ganhar dois prêmios em áreas diferentes (Física e Química).",
@@ -26,6 +29,7 @@ export const QUIZ_PADRAO = [
       "Plutônio e Rádio; descobriu a radioterapia e ganhou prêmios em Medicina e Física."
     ]
   },
+  //4
   {
     pergunta: "Joana d'Arc afirmava receber orientações divinas que a instruíram a apoiar o delfim Carlos. Quem eram as figuras religiosas citadas em seus relatos?",
     correta: "São Miguel Arcanjo, Santa Catarina de Alexandria e Santa Margarida de Antioquia.",
@@ -35,6 +39,7 @@ export const QUIZ_PADRAO = [
       "São Pedro, Santa Catarina de Siena e Nossa Senhora."
     ]
   },
+  //5
   {
     pergunta: "Em 23 de maio de 1430, Joana d'Arc foi capturada. Quem a capturou, a quem ela foi entregue e qual foi a condenação que a levou à fogueira aos 19 anos?",
     correta: "Capturada pelos borguinhões, entregue ao tribunal do bispo Pierre Cauchon e condenada por heresia.",
@@ -44,6 +49,7 @@ export const QUIZ_PADRAO = [
       "Capturada pelos borguinhões, entregue ao cerco de Paris e condenada por conspiração política."
     ]
   },
+  //6
   {
     pergunta: "A história de Joana d'Arc passou por uma grande revisão após sua morte. Em quais anos ocorreram, respectivamente, a anulação de sua condenação, sua beatificação e sua canonização?",
     correta: "Anulação em 1456; Beatificação em 1909; Canonização em 1920.",
@@ -53,24 +59,27 @@ export const QUIZ_PADRAO = [
       "Anulação em 1456; Beatificação em 1920; Canonização em 1909."
     ]
   },
+  //7
   {
-    pergunta: "Qual era uma das principais dificuldades enfrentadas pelas mulheres ao longo da história, segundo a reportagem?",
-    correta: "A falta de acesso a direitos e serviços econômicos, políticos e sociais.",
+    pergunta: "Quais restrições as mulheres enfrentaram ao longo da história, segundo a reportagem?",
+    correta: "Restrições à participação política, à autonomia econômica e ao acesso à educação.",
     incorretas: [
       "A proibição de participar de atividades relacionadas à agricultura.",
       "A obrigação de exercer exclusivamente atividades científicas.",
       "A falta de acesso a qualquer tipo de educação religiosa."
     ]
   },
-  {
-    pergunta: "Qual era uma das características atribuídas à mulher na sociedade descrita no início da reportagem?",
-    correta: "Era vista como cuidadora do lar e dos filhos e responsável pelas atividades domésticas.",
+  //8
+   {
+    pergunta: "Segundo a reportagem, como era o ensino básico oferecido às mulheres no Brasil a partir de 1827?",
+    correta: "Era separado do masculino e voltado principalmente a atividades domésticas para o cuidado da família, com matemática ministrada com menor frequência.",
     incorretas: [
-      "Era considerada responsável pela administração política das cidades.",
-      "Era vista como principal autoridade religiosa da família.",
-      "Era considerada responsável pela liderança dos exércitos."
+      "Era igual ao ensino masculino, com ênfase em matemática e ciências exatas.",
+      "Era voltado à formação de professoras e enfermeiras para atuarem em hospitais militares.",
+      "Era oferecido apenas em instituições religiosas, com foco exclusivo no ensino de línguas estrangeiras."
     ]
   },
+  //9
   {
     pergunta: "O que Florence Nightingale fazia durante a Guerra da Crimeia?",
     correta: "Tratava e cuidava dos soldados feridos nas batalhas.",
@@ -80,6 +89,7 @@ export const QUIZ_PADRAO = [
       "Atuava como diplomata nas negociações de paz."
     ]
   },
+  //10
   {
     pergunta: "Por que Florence Nightingale ficou conhecida pela imagem de percorrer os locais à noite com uma lâmpada?",
     correta: "Porque visitava os soldados feridos para cuidar de seus pacientes.",
@@ -89,6 +99,7 @@ export const QUIZ_PADRAO = [
       "Porque estudava os efeitos da iluminação nos hospitais."
     ]
   },
+  //11
   {
     pergunta: "O que Florence Nightingale desenvolveu em 1859?",
     correta: "Um projeto da Escola de Enfermagem do Hospital Saint Thomas, em Londres.",
@@ -98,6 +109,7 @@ export const QUIZ_PADRAO = [
       "Uma escola de medicina especializada em cirurgia."
     ]
   },
+  //12
   {
     pergunta: "O que as pesquisas de Marie Curie revelaram sobre alguns materiais?",
     correta: "Que alguns materiais podem emitir energia por muito tempo sem uma fonte externa.",
@@ -107,6 +119,7 @@ export const QUIZ_PADRAO = [
       "Que os materiais radioativos deixam de emitir energia imediatamente após serem descobertos."
     ]
   },
+  //13
   {
     pergunta: "Para qual finalidade Marie Curie percebeu que a radiação poderia ser utilizada?",
     correta: "Como uma forma de tratamento para destruir células doentes no corpo humano.",
@@ -116,6 +129,7 @@ export const QUIZ_PADRAO = [
       "Para impedir a formação de qualquer tipo de célula no organismo."
     ]
   },
+  //14
   {
     pergunta: "Qual é o nome do tratamento que utiliza radiação para destruir células cancerígenas?",
     correta: "Radioterapia.",
@@ -125,6 +139,7 @@ export const QUIZ_PADRAO = [
       "Imunoterapia."
     ]
   },
+  //15
   {
     pergunta: "Qual era o objetivo de Joana d'Arc ao apoiar o delfim Carlos, segundo seus relatos?",
     correta: "Expulsar os ingleses do território francês.",
@@ -134,6 +149,7 @@ export const QUIZ_PADRAO = [
       "Estabelecer uma nova escola militar em Orleães."
     ]
   },
+  //16
   {
     pergunta: "O que aconteceu quando Joana d'Arc foi enviada a Orleães em 1429?",
     correta: "O exército de socorro conseguiu romper o cerco em apenas nove dias.",
@@ -143,6 +159,7 @@ export const QUIZ_PADRAO = [
       "O cerco foi abandonado pelos franceses antes de qualquer combate."
     ]
   },
+  //17
   {
     pergunta: "Por que a influência de Joana d'Arc entre a nobreza francesa diminuiu?",
     correta: "Após o fracasso na tentativa de retomar Paris, durante o Cerco de Paris.",
@@ -152,6 +169,7 @@ export const QUIZ_PADRAO = [
       "Porque foi acusada de praticar medicina sem autorização."
     ]
   },
+  //18
   {
     pergunta: "Qual acontecimento transformou Joana d'Arc posteriormente em símbolo do patriotismo francês?",
     correta: "Sua execução após ser condenada por heresia e sua posterior transformação em símbolo nacional.",
@@ -161,6 +179,7 @@ export const QUIZ_PADRAO = [
       "Sua atuação na criação da radioterapia."
     ]
   },
+  //19
   {
     pergunta: "Qual é a ideia central do tema do congresso 'Mulheres e ciência: dignidade e reconhecimento à luz da magnifica humanitas'?",
     correta: "Reconhecer o papel das mulheres na ciência e valorizar a dignidade humana em sua contribuição para a sociedade.",
@@ -170,15 +189,7 @@ export const QUIZ_PADRAO = [
       "Focar a discussão no avanço tecnológico e na produtividade individual, sem considerar as desigualdades históricas de gênero."
     ]
   },
-  {
-    pergunta: "Por que o reconhecimento das mulheres na ciência é importante para a sociedade?",
-    correta: "Porque amplia a visibilidade, fortalece a justiça social e valoriza contribuições históricas que muitas vezes foram ignoradas.",
-    incorretas: [
-      "Porque a ciência se torna mais eficiente quando a participação é restrita a grupos considerados mais preparados socialmente.",
-      "Porque a equidade social pode ser resolvida apenas pela expansão de laboratórios e de infraestrutura tecnológica.",
-      "Porque a análise histórica da ciência deve ser substituída por critérios puramente econômicos de produtividade."
-    ]
-  },
+  //20
   {
     pergunta: "Qual das alternativas melhor resume a relação entre dignidade humana e ciência, segundo a proposta do congresso?",
     correta: "A ciência deve ser pensada como espaço de inclusão, valorização e reconhecimento da contribuição humana em todas as suas dimensões.",
@@ -188,15 +199,7 @@ export const QUIZ_PADRAO = [
       "A contribuição feminina na ciência é relevante apenas quando se relaciona diretamente ao cuidado, à vida doméstica e aos espaços tradicionais de gênero."
     ]
   },
-  {
-    pergunta: "O texto apresenta a história das mulheres na ciência como um processo marcado por quais elementos principais?",
-    correta: "Desigualdade histórica, exclusão social e luta por visibilidade e reconhecimento.",
-    incorretas: [
-      "Progresso contínuo e ausência de obstáculos, em que a participação feminina sempre foi reconhecida de forma igualitária.",
-      "Um avanço puramente técnico, sem relação com relações de poder, exclusão social ou disputas históricas.",
-      "Conquistas rápidas e definitivas, sem resistência, apagamento ou contestação dos saberes femininos."
-    ]
-  },
+  //21
   {
     pergunta: "Qual palavra expressa a ideia de valor humano e de plena dignidade presente no tema do congresso?",
     correta: "Magnifica humanitas.",
@@ -206,15 +209,46 @@ export const QUIZ_PADRAO = [
       "Tradição humanística."
     ]
   },
+  //22
   {
-    pergunta: "O congresso foi pensado para discutir, principalmente, qual questão central?",
-    correta: "A visibilidade, a dignidade e o reconhecimento das mulheres na ciência.",
+    pergunta: "Sobre a conquista do voto feminino no Brasil, o que a reportagem afirma a respeito do Código Eleitoral de 1932?",
+    correta: "Reconheceu o direito de votar e de ser votada, mas mantinha restrições ligadas ao estado civil e à situação econômica de algumas mulheres, eliminadas em 1934.",
     incorretas: [
-      "A organização de eventos científicos focados apenas na divulgação de pesquisas aplicadas e no desempenho institucional.",
-      "A definição de critérios para separar ciência, cultura e religião em todos os campos do conhecimento.",
-      "O debate sobre produtividade acadêmica sem considerar as desigualdades históricas de acesso e reconhecimento."
+      "Reconheceu apenas o direito de votar, sem permitir que as mulheres se candidatassem, e tornou o voto obrigatório para elas desde o início.",
+      "Reconheceu o direito de votar e de ser votada sem qualquer restrição, e a obrigatoriedade do voto feminino veio já em 1934.",
+      "Reconheceu o direito de votar e de ser votada, mas exigia escolaridade mínima das mulheres, restrição que só foi eliminada em 1946."
     ]
-  }
+  },
+  //23
+  {
+    pergunta: "Segundo a reportagem, por que Lise Meitner não recebeu o reconhecimento pela descoberta da fissão nuclear, mesmo após mais de 30 anos de pesquisa com Otto Hahn?",
+    correta: "Por uma combinação de fatores: o gênero, o exílio político durante o período nazista e rivalidades acadêmicas.",
+    incorretas: [
+      "Porque sua participação na pesquisa foi menor que a de Hahn e só foi comprovada depois da concessão do prêmio.",
+      "Porque o Comitê do Nobel não aceitava indicações de mulheres para a área de Física na época em que ela foi indicada.",
+      "Porque abandonou a pesquisa sobre fissão nuclear ao deixar a Alemanha, antes de a descoberta ser concluída."
+    ]
+  },
+  //24
+  {
+    pergunta: "O que a reportagem aponta sobre a presença das mulheres na pós-graduação brasileira?",
+    correta: "São maioria entre as pessoas tituladas há mais de 20 anos, mas representam menos da metade do corpo docente, com desigualdade mais acentuada em engenharia e ciências exatas.",
+    incorretas: [
+      "São minoria entre as pessoas tituladas, mas ocupam a maior parte do corpo docente, principalmente em engenharia e ciências exatas e da terra.",
+      "São maioria entre as pessoas tituladas e entre o corpo docente, exceto nas bolsas no exterior, onde ainda são minoria.",
+      "Têm presença equilibrada entre tituladas e docentes, e a desigualdade aparece apenas na concessão de bolsas da CAPES."
+    ]
+  },
+  //25
+  {
+    pergunta: "Qual foi a contribuição das pesquisadoras Jaqueline Goes de Jesus, Ingra Morales, Flávia Salles e Erika Manuli durante a pandemia de 2020?",
+    correta: "Decifraram o genoma do vírus a partir do primeiro caso de Covid-19 na América Latina, em 48 horas, o que foi fundamental para a criação rápida de vacinas.",
+    incorretas: [
+      "Desenvolveram a primeira vacina contra a Covid-19 na América Latina em 48 horas, a partir de pesquisas anteriores sobre arbovírus.",
+      "Identificaram o primeiro caso de Covid-19 na América Latina e criaram o protocolo de testagem usado em todo o país.",
+      "Sequenciaram o genoma do vírus em menos de uma semana, em uma equipe liderada pela médica Ester Sabino, formada apenas por mulheres."
+    ]
+  },
 ];
 
 export class QuizServico {
